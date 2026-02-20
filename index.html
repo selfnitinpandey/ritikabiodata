@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritika Pandey · marriage biodata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #d43f6b;        /* soft rose — feminine twist */
+            --secondary: #a5275c;       /* deeper magenta */
+            --accent: #ffb6c1;           /* light pink for accents */
+            --light: #fef4f7;
+            --dark: #2f1e2a;
+            --gray: #6b4f5a;
+            --light-gray: #eedde2;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #feeef2 0%, #f8e0e7 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 45px rgba(180, 60, 110, 0.18);
+            overflow: hidden;
+        }
+        
+        /* header — inspired by nitin's template, but feminine */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 230, 0.3) 0%, rgba(255,255,255,0) 70%);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 220, 230, 0.6);
+            margin: 0 auto 10px;
+            box-shadow: 0 10px 25px rgba(120, 30, 60, 0.25);
+            background: #ffe2eb; /* placeholder if no image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #a1355b;
+        }
+        
+        /* main grid: two columns on larger screens, exactly like reference */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .section-full {
+            grid-column: 1 / -1;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            background-color: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        /* personal info cards (flex rows) */
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .info-icon {
+            width: 42px;
+            height: 42px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            flex-shrink: 0;
+            border: 1px solid #fad1dc;
+        }
+        
+        .info-content h3 {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        
+        .info-content p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 550;
+        }
+        
+        /* details grid (smaller attribute-value) */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+        
+        .detail-item {
+            margin-bottom: 12px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--gray);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            letter-spacing: 0.2px;
+        }
+        
+        .detail-value {
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* family members grid (cards) */
+        .family-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .family-member {
+            background-color: var(--light);
+            padding: 20px 10px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.25s ease;
+            border: 1px solid var(--light-gray);
+            box-shadow: 0 4px 8px rgba(210, 130, 160, 0.1);
+        }
+        
+        .family-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 22px rgba(170, 70, 110, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .family-icon {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .family-member .detail-label {
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .family-member .detail-value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        /* address block: compact and elegant */
+        .address-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px 25px;
+            background: #fef9fb;
+            padding: 20px;
+            border-radius: 18px;
+            border: 1px solid #ffdbe6;
+        }
+        
+        .address-item {
+            display: flex;
+            align-items: baseline;
+            border-bottom: 1px dashed #f3ced9;
+            padding: 8px 0;
+        }
+        
+        .address-item .label {
+            font-weight: 600;
+            min-width: 90px;
+            color: #7e5467;
+            font-size: 0.9rem;
+        }
+        
+        .address-item .value {
+            font-weight: 500;
+            color: #2d2027;
+        }
+        
+        /* footer / contact button (optional but keeping style) */
+        .footer-note {
+            grid-column: 1 / -1;
+            background: #fcecf2;
+            padding: 22px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #edd3dd;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.25s;
+            box-shadow: 0 6px 16px rgba(190, 60, 110, 0.3);
+            gap: 8px;
+        }
+        
+        .contact-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 24px rgba(170, 50, 100, 0.4);
+            cursor: default; /* not interactive, just style */
+        }
+        
+        .pill {
+            background: #ffe5ed;
+            color: #9e4466;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2rem; }
+            .profile-img { width: 130px; height: 130px; }
+            .family-members { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 400px) {
+            .family-members { grid-template-columns: 1fr; }
+            .address-item { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- header (exactly like Nitin's design) -->
+        <div class="header">
+            <div class="header-content">
+                <!-- no actual image, but a placeholder icon with feminine touch -->
+                <div class="profile-img">
+                    <i class="fas fa-female" style="font-size: 5rem; color: white; text-shadow: 2px 2px 8px #b3446b;"></i>
+                </div>
+                <h1>Ritika Pandey</h1>
+            </div>
+        </div>
+
+        <!-- main content - two columns on wide -->
+        <div class="main-content">
+            <!-- ========== PERSONAL INFORMATION (full width) ========== -->
+            <div class="section section-full">
+                <h2 class="section-title">
+                    <i class="fas fa-user-circle"></i> Personal Information
+                </h2>
+                <div class="personal-info">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-content">
+                            <h3>Mobile number</h3>
+                            <p>+91 78604 74847</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-venus-mars"></i></div>
+                        <div class="info-content">
+                            <h3>Gender</h3>
+                            <p>Female</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-birthday-cake"></i></div>
+                        <div class="info-content">
+                            <h3>Date of birth</h3>
+                            <p>25 July 2002</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                        <div class="info-content">
+                            <h3>Height</h3>
+                            <p>5 ft 3 in (160 cm)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-pray"></i></div>
+                        <div class="info-content">
+                            <h3>Religion</h3>
+                            <p>Hindu</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="info-content">
+                            <h3>Gotra</h3>
+                            <p>SABARAN</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-sun"></i></div>
+                        <div class="info-content">
+                            <h3>Complexion</h3>
+                            <p>Fair</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="info-content">
+                            <h3>Education</h3>
+                            <p>Master of Commerce (M.Com)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-globe"></i></div>
+                        <div class="info-content">
+                            <h3>Nationality</h3>
+                            <p>Indian</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== ADDRESS INFORMATION (full width) ========== -->
+            <div class="section section-full">
+                <h2 class="section-title">
+                    <i class="fas fa-map-marker-alt"></i> Address Information
+                </h2>
+                <div class="address-grid">
+                    <div class="address-item"><span class="label">Village</span><span class="value">Basarahi</span></div>
+                    <div class="address-item"><span class="label">Post</span><span class="value">Balwarganj</span></div>
+                    <div class="address-item"><span class="label">Thana</span><span class="value">Sujanganj</span></div>
+                    <div class="address-item"><span class="label">District</span><span class="value">Jaunpur</span></div>
+                    <div class="address-item"><span class="label">State</span><span class="value">Uttar Pradesh</span></div>
+                    <div class="address-item"><span class="label">PIN</span><span class="value">222201</span></div>
+                </div>
+            </div>
+
+            <!-- left column: family (full width on mobile, but here first column) -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i> Family details
+                </h2>
+                <div class="family-members">
+                    <div class="family-member">
+                        <i class="fas fa-user-tie family-icon"></i>
+                        <div class="detail-label">Father</div>
+                        <div class="detail-value">RAJ KUMAR PANDEY</div>
+                    </div>
+                    <div class="family-member">
+                        <i class="fas fa-user-nurse family-icon"></i>
+                        <div class="detail-label">Mother</div>
+                        <div class="detail-value">NEELAM PANDEY</div>
+                    </div>
+                </div>
+                
+                 <div class="family-members">
+                    <div class="family-member">
+                        <i class="fas fa-user-tie family-icon"></i>
+                        <div class="detail-label">Brother</div>
+                        <div class="detail-value">NITIN PANDEY</div>
+                    </div>
+                    <div class="family-member">
+                        <i class="fas fa-user-nurse family-icon"></i>
+                        <div class="detail-label">Mother</div>
+                        <div class="detail-value">NIKHIL PANDEY</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right column: contact & extra -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-address-book"></i> Contact
+                </h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-phone-square-alt"></i> Phone</div>
+                        <div class="detail-value">7860474847</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-user"></i> Contact person</div>
+                        <div class="detail-value">Raj Ajor Pandey (Grand Father)</div>
+                    </div>
+                     <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-phone-square-alt"></i> Phone</div>
+                        <div class="detail-value">8928395872</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label"><i class="fas fa-user"></i> Contact person</div>
+                        <div class="detail-value">Raj Kumar Pandey (Father)</div>
+                    </div>
+                    
+                    
+                </div>
+                <div style="margin-top: 30px;">
+                    <div style="background: #fbeff4; border-radius: 24px; padding: 18px;">
+                        <i class="fas fa-quote-right" style="color: #d45b84; opacity: 0.6;"></i>
+                        <p style="margin-top: 5px; font-style: italic;">Village Basarahi, Post Balwarganj,<br> Thana Sujanganj, District Jaunpur,<br> Uttar Pradesh 222201</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bottom full width: footer / contact style (like reference but info) -->
+            <div class="footer-note">
+                <span class="pill"><i class="far fa-heart"></i> Sabaran gotra  •  hindu  •  fair</span>
+                <span class="contact-btn"><i class="fas fa-phone-alt"></i> +91 7860474847</span>
+            </div>
+        </div> <!-- end main-content -->
+    </div> <!-- end container -->
+</body>
+</html>
